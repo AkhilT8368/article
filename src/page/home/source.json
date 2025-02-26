@@ -1,0 +1,13 @@
+[
+    { "name": "Tesla", "value": "tesla" },
+    { "name": "Apple", "value": "apple" },
+    { "name": "Microsoft", "value": "microsoft" },
+    { "name": "Amazon", "value": "amazon" },
+    { "name": "Google", "value": "google" },
+    { "name": "Facebook", "value": "facebook" },
+    { "name": "Netflix", "value": "netflix" },
+    { "name": "NVIDIA", "value": "nvidia" },
+    { "name": "Samsung", "value": "samsung" },
+    { "name": "Intel", "value": "intel" }
+  ]
+  
