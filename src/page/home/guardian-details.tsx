@@ -1,20 +1,13 @@
 import { Button, Card, CardContent, Stack, Typography } from "@mui/material";
 import React from "react";
-import { Link } from "react-router-dom";
-import { GuardianArticle } from "src/types/guardian-article";
+import useGuardianGetBy from "src/hooks/use-guardian-get-by";
 
-const GuardianArticleCard: React.FC<GuardianArticle> = ({
-  apiUrl,
-  pillarName,
-  sectionId,
-  sectionName,
-  webUrl,
-  webTitle,
-  webPublicationDate,
-  id,
-  type
-}) => {
-  
+const GuardianDetails: React.FC = () => {
+  const data = useGuardianGetBy();
+  if (!data) {
+    return <Typography>No article data available.</Typography>;
+  }
+  const {webTitle,webUrl ,sectionName ,webPublicationDate} = data || {};
   return (
     <Card sx={{ mt: 2 }}>
       <CardContent>
@@ -39,18 +32,9 @@ const GuardianArticleCard: React.FC<GuardianArticle> = ({
             {new Date(webPublicationDate).toLocaleString("en-GB")}
           </Typography>
         </Stack>
-        <Button
-          variant="outlined"
-          sx={{ mt: 2 }}
-          fullWidth
-          to={`/guardian/${type}?id=${id}`}
-          component={Link}
-        >
-          View
-        </Button>
       </CardContent>
     </Card>
   );
 };
 
-export default GuardianArticleCard;
+export default GuardianDetails;

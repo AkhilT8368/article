@@ -7,6 +7,9 @@ const Home = Loadable(lazy(() => import("src/page/home/home")));
 const Source = Loadable(
   lazy(() => import("src/page/source-filter/source-filter"))
 );
+const GuardianDetails = Loadable(
+  lazy(() => import("src/page/home/guardian-details"))
+);
 const Error404 = Loadable(lazy(() => import("src/route/error-404")));
 const getRoutes = () => {
   const routes = [
@@ -17,6 +20,7 @@ const getRoutes = () => {
         { index: true, element: <Navigate to="/home" /> },
         { path: "home", element: <Home /> },
         { path: "source", element: <Source /> },
+        { path: "guardian/:gid", element: <GuardianDetails /> },
       ],
     },
     { path: "*", element: <Error404 /> }, // Catch-all route for 404 errors

@@ -50,17 +50,17 @@ const SourceFilter: React.FC = () => {
           </Button>
         </Stack>
       </Box>
-      {data?.map(({ name, description }) => {
+      {data?.map(({id, name, description }) => {
         return (
           <Card sx={{ p: 2, mt: 2 }}>
             <FormGroup>
               <FormControlLabel
-                key={name}
+                key={id}
                 required
                 control={
                   <Checkbox
-                    checked={selectedSources.includes(name)}
-                    name={name}
+                    checked={selectedSources.includes(id)}
+                    name={id}
                     onChange={handleChange}
                   />
                 }

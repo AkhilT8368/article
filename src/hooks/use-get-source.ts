@@ -5,10 +5,10 @@ import { NEWS_API_KEY } from "src/config";
 interface SourceProp {
   name: string;
   description: string;
+  id:string
 }
 const useGetSource = () => {
   const [data, setData] = useState<SourceProp[]>([]);
-  const [error,setError] =useState("")
   const fetchData = async () => {
     try {
       const response = await axios.get(

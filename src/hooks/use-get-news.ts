@@ -24,9 +24,9 @@ interface FetchNewsParams {
 const getSource = () => {
   const savedSources = localStorage.getItem("sources");
   const parseData = savedSources ? JSON.parse(savedSources) : [];
-  const changeType = parseData.map((item: string) => kebabCase(item));
+  
 
-  return changeType.join(",");
+  return parseData.join(",");
 };
 const useGetNews = ({ query, date }: FetchNewsParams) => {
   const source = getSource();
